@@ -1,3 +1,3 @@
 # debian-os
-'''bash
+```bash
 sudo apt update && sudo apt full-upgrade -y && reboot
