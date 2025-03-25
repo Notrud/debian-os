@@ -18,6 +18,7 @@ $└─nvme0n1p3 259:4    0   977M  0 part [SWAP]
 `sudo mdadm --create /dev/md0 --raid-devices=2 --level=1 /dev/sda /dev/sdb`
 # ตรวจสอบสถานะของ RAID
 `cat /proc/mdstat`
+
 ตัวอย่าง
 <pre><code>
 $ cat /proc/mdstat
