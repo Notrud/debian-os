@@ -1,5 +1,5 @@
 # ทำการอัพเดตระบบและติดตั้ง mdadm
-```apt update && sudo apt -y full-upgrade && apt install -y mdadm```
+`pt update && sudo apt -y full-upgrade && apt install -y mdadm`
 # ใช้คำสั้ง lsblk เพื่อตรวจสอบ disk
 ตัวอย่าง
 ```
@@ -15,9 +15,9 @@ $└─nvme0n1p3 259:4    0   977M  0 part [SWAP]
 ```
 # สร้าง RAID 1
 ในกรณีนี้การสร้าง raid จะใช้ disk ชื่อ sda และ sdb ซึ่งมีขนาดเดียวกันและจะใช้สร้าง RAID 1
-```sudo mdadm --create /dev/md0 --raid-devices=2 --level=1 /dev/sda /dev/sdb```
+`sudo mdadm --create /dev/md0 --raid-devices=2 --level=1 /dev/sda /dev/sdb`
 # ตรวจสอบสถานะของ RAID
-```cat /proc/mdstat```
+`cat /proc/mdstat`
 ตัวอย่าง
 ```
 $ cat /proc/mdstat
@@ -29,7 +29,7 @@ md0 : active raid1 sdb[1] sda[0]
 unused devices: <none>
 ```
 # เพิ่ม RAID array ลงใน /etc/fstab
-```sudo blkid /dev/md0```
-```UUID=<UUID>  /mnt/raid1  ext4  defaults  0  0```
+`sudo blkid /dev/md0`
+`UUID=<UUID>  /mnt/raid1  ext4  defaults  0  0`
 # ทำการเริ่มระบบใหม่
-```reboot```
+`reboot`
