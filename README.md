@@ -1,5 +1,5 @@
 # ทำการอัพเดตระบบและติดตั้ง mdadm
-`pt update && sudo apt -y full-upgrade && apt install -y mdadm`
+`apt update && sudo apt -y full-upgrade && apt install -y mdadm`
 # ใช้คำสั้ง lsblk เพื่อตรวจสอบ disk
 ตัวอย่าง
 <pre><code>
