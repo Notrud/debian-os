@@ -14,7 +14,7 @@ $├─nvme0n1p2 259:3    0 231.4G  0 part /
 $└─nvme0n1p3 259:4    0   977M  0 part [SWAP]
 </code></pre>
 # สร้าง RAID 1
-ในกรณีนี้การสร้าง raid จะใช้ disk ชื่อ sda และ sdb ซึ่งมีขนาดเดียวกันและจะใช้สร้าง RAID 1
+ในกรณีนี้การสร้าง raid จะใช้ disk ชื่อ sda และ sdb ซึ่งมีขนาดใกล้เคียงกันในการสร้าง RAID 1
 `sudo mdadm --create /dev/md0 --raid-devices=2 --level=1 /dev/sda /dev/sdb`
 # ตรวจสอบสถานะของ RAID
 `cat /proc/mdstat`
