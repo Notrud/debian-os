@@ -1,0 +1,34 @@
+การตั้งค่า IP Address แบบ Static บน Debian 12 สามารถทำได้โดยการแก้ไขไฟล์การตั้งค่าเครือข่ายที่อยู่ใน /etc/network/interfaces
+
+ตั้งค่า IP Static ผ่าน interfaces
+
+1. เปิดไฟล์ /etc/network/interfaces ด้วย text editor:
+
+`sudo nano /etc/network/interfaces`
+
+
+2. เพิ่มหรือแก้ไขการตั้งค่าของอินเทอร์เฟซเครือข่าย (เช่น eth0 หรือ enp0s3) ดังนี้:
+
+`auto enp0s3
+iface enp0s3 inet static
+    address 192.168.1.250
+    netmask 255.255.255.0
+    gateway 192.168.1.1
+    dns-nameservers 8.8.8.8 8.8.4.4`
+
+address: กำหนด IP Address ที่คุณต้องการ
+
+netmask: กำหนด Subnet Mask
+
+gateway: กำหนด Default Gateway
+
+dns-nameservers: กำหนด DNS Server ตัวอย่างใช้ DNS ของ Google(สามารถกำหนดหรือไม่ก็ได้)
+
+
+
+3. บันทึกไฟล์และออกจาก editor (ใน Nano ใช้ Ctrl + O แล้ว Ctrl + X).
+
+
+4. รีสตาร์ทบริการเครือข่าย:
+
+`sudo systemctl restart networking`
